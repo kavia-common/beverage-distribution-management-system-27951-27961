@@ -1,16 +1,27 @@
 # android_frontend
 
-A new Flutter project.
+Modern Flutter Android app for accounting and CRM operations in a beverage distribution enterprise.
 
-## Getting Started
+Style: Ocean Professional (Blue #2563EB and Amber #F59E0B accents), minimalist, rounded corners, subtle gradients, smooth transitions.
 
-This project is a starting point for a Flutter application.
+Features:
+- Bottom navigation with Dashboard, Customers, Inventory, Sales, and Settings.
+- Lists and forms for managing customers, inventory products, and sales orders (mock data).
+- Modular architecture with services and models, ready for future backend integration.
+- Ocean-themed color scheme and clean UI components.
+- Provider-based state management using MockDataService.
 
-A few resources to get you started if this is your first Flutter project:
+Structure:
+- lib/
+  - main.dart (app entry, theme wiring)
+  - theme/app_theme.dart (Ocean Professional Theme)
+  - models/ (customer.dart, product.dart, sales_order.dart)
+  - services/mock_data_service.dart (in-memory data + CRUD stubs)
+  - pages/
+    - home_shell.dart (bottom nav shell)
+    - tabs/ (dashboard_page.dart, customers_page.dart, inventory_page.dart, sales_page.dart, settings_page.dart)
+  - widgets/common.dart (reusable UI widgets)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Running:
+- flutter pub get
+- flutter run

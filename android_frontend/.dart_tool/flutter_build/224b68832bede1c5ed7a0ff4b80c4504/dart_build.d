@@ -1,0 +1,1 @@
+ /home/kavia/workspace/code-generation/beverage-distribution-management-system-27951-27961/android_frontend/.dart_tool/flutter_build/224b68832bede1c5ed7a0ff4b80c4504/dart_build_result.json: 

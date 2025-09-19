@@ -1,18 +1,25 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:android_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Bottom navigation has 5 destinations', (tester) async {
+    await tester.pumpWidget(const AndroidFrontendApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('android_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.text('Dashboard'), findsWidgets);
+    expect(find.text('Customers'), findsWidgets);
+    expect(find.text('Inventory'), findsWidgets);
+    expect(find.text('Sales'), findsWidgets);
+    expect(find.text('Settings'), findsWidgets);
   });
 
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Opens Customers tab when tapped', (tester) async {
+    await tester.pumpWidget(const AndroidFrontendApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('android_frontend'), findsOneWidget);
+    await tester.tap(find.text('Customers').first);
+    await tester.pumpAndSettle();
+
+    expect(find.text('Customers'), findsWidgets);
   });
 }
